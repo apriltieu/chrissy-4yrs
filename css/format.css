@@ -113,6 +113,11 @@
 	height: 50%;
 }
 
+.image {
+  max-width: 45%;
+  max-height: 45%;
+}
+
 #img{
 	display: block;
 	left: 0;
