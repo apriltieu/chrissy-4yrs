@@ -10,7 +10,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 var marker = L.marker([-37.73, 144.95]).addTo(map);
-var marker2 = L.marker([51.513, -0.09]).addTo(map);
+var marker2 = L.marker([45.46887384715786, 9.181937953805093]).addTo(map);
 marker2.bindPopup("<b>Oh wow!</b><br>Now we are here!").openPopup();
 marker.bindPopup("<b>We started here!</b>").openPopup();
 //L.popup()
