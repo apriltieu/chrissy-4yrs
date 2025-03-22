@@ -24,7 +24,8 @@ function play(){
 	}
 	flag = 1 - flag;
 	document.getElementById("typeDiv").style.opacity = flag;
-	document.getElementById("map").style.opacity = flag;
+	document.getElementById("mapDiv").style.opacity = flag;
+	document.getElementById("getLocBtn").style.opacity = flag;
 	document.getElementById("imgTxt").style.opacity = 1 - flag;
 	if(t == 0){
 		//setTimeout(showImage, 1000);

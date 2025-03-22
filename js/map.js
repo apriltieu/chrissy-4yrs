@@ -4,14 +4,35 @@
 //    maxZoom: 19,
 //    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 //}).addTo(map);
+
+var currentLoc;
+
+function getLocation() {
+	 if (navigator.geolocation) {
+	   navigator.geolocation.getCurrentPosition(success, error);
+	 } else {
+	   currentLoc = [45.46887384715786, 9.181937953805093];
+	 }
+}
+
+function success(position) {
+  currentLoc = [position.coords.latitude, position.coords.longitude];
+	var marker2 = L.marker(currentLoc).addTo(map);
+	marker2.bindPopup("<b>Oh wow!</b><br>Now we are here!").openPopup();
+}
+
+function error() {
+  currentLoc = [45.46887384715786, 9.181937953805093];
+}
+
+
 var map = L.map('map').setView([0,0], 0);
+
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 var marker = L.marker([-37.73, 144.95]).addTo(map);
-var marker2 = L.marker([45.46887384715786, 9.181937953805093]).addTo(map);
-marker2.bindPopup("<b>Oh wow!</b><br>Now we are here!").openPopup();
 marker.bindPopup("<b>We started here!</b>").openPopup();
 //L.popup()
 //    .setLatLng([-37.73, 144.95])
